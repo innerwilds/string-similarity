@@ -3,10 +3,11 @@ description: Finds degree of similarity between two strings, based on Dice's Coe
 version: 2.1.1
 maintainers: Jérémy LANDON <contact@jeremylandon.com>
 homepage: https://github.com/jeremylandon/string-similarity
+publish_to: none
 
 environment:
   sdk: '>=2.12.0 <4.0.0'
 
 dev_dependencies:
-  pedantic: ^1.11.0
+  lints: ^5.0.0
   test: ^1.16.7

@@ -85,17 +85,19 @@ class StringSimilarity {
   /// ##### Returns
   /// (BestMatch): An object with a ratings property, which gives a similarity rating for each target string, a bestMatch property, which specifies which target string was most similar to the main string, and a bestMatchIndex property, which specifies the index of the bestMatch in the targetStrings array.
   static BestMatch findBestMatch(
-      String? mainString, List<String?> targetStrings) {
+      String? mainString, Iterable<String?> targetStrings) {
     final ratings = <Rating>[];
     var bestMatchIndex = 0;
 
-    for (var i = 0; i < targetStrings.length; i++) {
-      final currentTargetString = targetStrings[i];
+    var i = 0;
+
+    for (final currentTargetString in targetStrings) {
       final currentRating = compareTwoStrings(mainString, currentTargetString);
       ratings.add(Rating(target: currentTargetString, rating: currentRating));
       if (currentRating > ratings[bestMatchIndex].rating!) {
         bestMatchIndex = i;
       }
+      i++;
     }
 
     final bestMatch = ratings[bestMatchIndex];
