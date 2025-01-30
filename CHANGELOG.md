@@ -1,3 +1,6 @@
+## 3.0.0
+- Iterable over List
+
 ## 2.0.0
 - migrated to null safety
 - require dart sdk >= 2.12
